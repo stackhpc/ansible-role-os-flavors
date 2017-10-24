@@ -17,4 +17,5 @@ os_flavors_auth: {}
 # - 'ephemeral': Size of ephemeral disk (GB), optional.
 # - 'swap': Size of swap (GB), optional.
 # - 'is_public': Whether the flavor is public.
+# - 'extra_specs': Dict of Nova flavor metadata, optional.
 os_flavors: []

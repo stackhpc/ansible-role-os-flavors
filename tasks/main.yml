@@ -14,6 +14,7 @@
     ephemeral: "{{ item.ephemeral | default(omit) }}"
     swap: "{{ item.swap | default(omit) }}"
     is_public: "{{ item.is_public | default(omit) }}"
+    extra_specs: "{{ item.extra_specs | default(omit) }}"
     state: present
   with_items: "{{ os_flavors }}"
 
