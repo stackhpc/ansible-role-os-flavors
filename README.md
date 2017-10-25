@@ -23,7 +23,9 @@ compatible with the `auth` argument of `os_*` Ansible modules.
 
 `os_flavors` is a list of nova flavors to register. Each item should be a
 dict containing the items 'name', 'ram', 'disk', and 'vcpus'. Optionally, the
-dict may contain 'ephemeral' and 'swap' items.
+dict may contain 'ephemeral' and 'swap' items. Optionally, the dict may also
+contain an item 'extra_specs', which is a dict of metadata to attach to the
+flavor object.
 
 Dependencies
 ------------
@@ -52,6 +54,9 @@ The following playbook registers a nova flavor.
               ram: 1024
               disk: 1024
               vcpus: 2
+              extra_specs:
+		hw:cpu_policy: "dedicated"
+		hw:numa_nodes: "1"
 
 Author Information
 ------------------
