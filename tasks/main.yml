@@ -11,6 +11,7 @@
   os_nova_flavor:
     auth_type: "{{ os_flavors_auth_type }}"
     auth: "{{ os_flavors_auth }}"
+    cacert: "{{ os_flavors_cacert | default(omit) }}"
     name: "{{ item.name }}"
     ram: "{{ item.ram }}"
     vcpus: "{{ item.vcpus }}"
