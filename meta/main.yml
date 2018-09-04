@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  role_name: os-flavors
+  #role_name: os_flavors
   author: Mark Goddard
   description: >
     Role to register nova flavors in OpenStack
