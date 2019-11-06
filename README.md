@@ -23,6 +23,9 @@ compatible with the `auth` argument of `os_*` Ansible modules.
 
 `os_flavors_cacert` is an optional path to a CA certificate bundle.
 
+`os_flavors_interface` is the endpoint URL type to fetch from the service
+catalog. Maybe be one of `public`, `admin`, or `internal`.
+
 `os_flavors` is a list of nova flavors to register. Each item should be a
 dict containing the items 'name', 'ram', 'disk', and 'vcpus'. Optionally, the
 dict may contain 'ephemeral' and 'swap' items. Optionally, the dict may also

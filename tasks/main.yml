@@ -12,6 +12,7 @@
     auth_type: "{{ os_flavors_auth_type }}"
     auth: "{{ os_flavors_auth }}"
     cacert: "{{ os_flavors_cacert | default(omit) }}"
+    interface: "{{ os_flavors_interface | default(omit, true) }}"
     name: "{{ item.name }}"
     ram: "{{ item.ram }}"
     vcpus: "{{ item.vcpus }}"
