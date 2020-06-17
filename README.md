@@ -35,7 +35,7 @@ flavor object.
 Dependencies
 ------------
 
-This role depends on the `stackhpc.os-shade` role.
+This role depends on the `stackhpc.os_openstacksdk` role.
 
 Example Playbook
 ----------------
