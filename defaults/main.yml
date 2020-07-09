@@ -20,6 +20,8 @@ os_flavors_interface:
 # - 'vcpus': Number of vCPUs.
 # - 'ephemeral': Size of ephemeral disk (GB), optional.
 # - 'swap': Size of swap (GB), optional.
+# - 'rxtx_factor': RX/TX factor, optional.
 # - 'is_public': Whether the flavor is public.
+# - 'flavorid': ID for the flavor, optional.
 # - 'extra_specs': Dict of Nova flavor metadata, optional.
 os_flavors: []

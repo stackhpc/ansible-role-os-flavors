@@ -26,11 +26,11 @@ compatible with the `auth` argument of `os_*` Ansible modules.
 `os_flavors_interface` is the endpoint URL type to fetch from the service
 catalog. Maybe be one of `public`, `admin`, or `internal`.
 
-`os_flavors` is a list of nova flavors to register. Each item should be a
-dict containing the items 'name', 'ram', 'disk', and 'vcpus'. Optionally, the
-dict may contain 'ephemeral' and 'swap' items. Optionally, the dict may also
-contain an item 'extra_specs', which is a dict of metadata to attach to the
-flavor object.
+`os_flavors` is a list of nova flavors to register. Each item should be a dict
+containing the items 'name', 'ram', 'disk', and 'vcpus'. Optionally, the dict
+may contain 'ephemeral', 'flavorid', 'rxtx_factor' and 'swap' items.
+Optionally, the dict may also contain an item 'extra_specs', which is a dict of
+metadata to attach to the flavor object.
 
 Dependencies
 ------------
