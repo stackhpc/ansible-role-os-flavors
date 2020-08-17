@@ -60,8 +60,8 @@ The following playbook registers a nova flavor.
               disk: 1024
               vcpus: 2
               extra_specs:
-		hw:cpu_policy: "dedicated"
-		hw:numa_nodes: "1"
+                hw:cpu_policy: "dedicated"
+                hw:numa_nodes: "1"
 
 Author Information
 ------------------
