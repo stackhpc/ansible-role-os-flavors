@@ -1,33 +1,8 @@
 ---
 - name: Set a fact about the Ansible python interpreter
   set_fact:
-    old_ansible_python_interpreter: "{{ ansible_python_interpreter | default('/usr/bin/python') }}"
+    old_ansible_python_interpreter: "{{ ansible_python_interpreter | default('/usr/bin/python' + ansible_python.version.major | string) }}"
 
-- name: Set a fact to ensure Ansible uses the python interpreter in the virtualenv
-  set_fact:
-    ansible_python_interpreter: "{{ os_flavors_venv }}/bin/python"
-
-- name: Ensure nova flavors exist
-  os_nova_flavor:
-    auth_type: "{{ os_flavors_auth_type }}"
-    auth: "{{ os_flavors_auth }}"
-    cacert: "{{ os_flavors_cacert | default(omit) }}"
-    interface: "{{ os_flavors_interface | default(omit, true) }}"
-    name: "{{ item.name }}"
-    ram: "{{ item.ram }}"
-    vcpus: "{{ item.vcpus }}"
-    disk: "{{ item.disk }}"
-    ephemeral: "{{ item.ephemeral | default(omit) }}"
-    swap: "{{ item.swap | default(omit) }}"
-    rxtx_factor: "{{ item.rxtx_factor | default(omit) }}"
-    is_public: "{{ item.is_public | default(omit) }}"
-    flavorid: "{{ item.flavorid | default(omit) }}"
-    extra_specs: "{{ item.extra_specs | default(omit) }}"
-    state: "{{ item.state | default('present') }}"
-  with_items: "{{ os_flavors }}"
-
-# This variable is unset before we set it, and it does not appear to be
-# possible to unset a variable in Ansible.
-- name: Set a fact to reset the Ansible python interpreter
-  set_fact:
-    ansible_python_interpreter: "{{ old_ansible_python_interpreter }}"
+- import_tasks: flavors.yml
+  vars:
+    ansible_python_interpreter: "{{ os_flavors_venv ~ '/bin/python' if os_flavors_venv != None else old_ansible_python_interpreter }}"
