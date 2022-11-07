@@ -1,6 +1,6 @@
 ---
 - name: Ensure nova flavors exist
-  os_nova_flavor:
+  openstack.cloud.compute_flavor:
     auth_type: "{{ os_flavors_auth_type }}"
     auth: "{{ os_flavors_auth }}"
     cacert: "{{ os_flavors_cacert | default(omit) }}"
