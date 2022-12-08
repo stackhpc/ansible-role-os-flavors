@@ -2,7 +2,7 @@ OpenStack Flavors
 =================
 
 This role can be used to register flavors in nova using the
-os\_nova\_flavor module.
+openstack.cloud.compute\_flavor module.
 
 Requirements
 ------------
